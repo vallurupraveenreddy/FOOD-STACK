@@ -1,0 +1,167 @@
+.my-orders{
+    margin:60px 0px;
+    min-height:40vh;
+}
+.my-orders h2{
+    font-size:max(2vw,24px);
+    font-weight:600;
+    margin-bottom:20px;
+}
+.my-orders-error{
+    color:tomato;
+}
+.my-orders .container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.my-orders-order-card{
+    border:1px solid tomato;
+    border-radius:8px;
+    padding:15px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.my-orders-order-header{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:#9c9c9c;
+}
+.my-orders-order{
+    display:grid;
+    grid-template-columns:0.5fr 2fr 1fr 1fr 1.5fr 1fr;
+    align-items:center;
+    gap:20px;
+    color:#454545;
+    font-size:14px;
+}
+.my-orders-address{
+    font-size:12px;
+    color:#9c9c9c;
+    margin-top:-6px;
+}
+.my-orders-order img{
+    width:50px;
+}
+.my-orders-order-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+.my-orders-order-buttons button{
+    border:none;
+    padding:8px 14px;
+    border-radius:4px;
+    background-color:#ffe1e1ff;
+    cursor:pointer;
+    font-size:12px;
+}
+
+/* ---- new: status stepper ---- */
+.my-orders-stepper{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    border-top:1px dashed #e2e2e2;
+    padding-top:12px;
+}
+.my-orders-step{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    color:#b5b5b5;
+}
+.my-orders-step.done{
+    color:#2e7d32;
+    font-weight:600;
+}
+.my-orders-step-dot{
+    font-size:14px;
+}
+.my-orders-cancelled{
+    color:tomato;
+    font-weight:600;
+}
+
+/* ---- new: reviews ---- */
+.my-orders-review-row{
+    border-top:1px dashed #e2e2e2;
+    padding-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+.my-orders-rate-btn{
+    border:1px solid tomato;
+    background:transparent;
+    color:tomato;
+    padding:6px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:13px;
+}
+.my-orders-thanks{
+    color:#2e7d32;
+    font-size:13px;
+}
+.my-orders-rate-form{
+    border:1px solid #e2e2e2;
+    border-radius:6px;
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:220px;
+}
+.my-orders-rate-form p{
+    font-size:13px;
+    font-weight:600;
+}
+.my-orders-rate-stars span{
+    cursor:pointer;
+    font-size:20px;
+    color:#d5d5d5;
+}
+.my-orders-rate-stars span.filled{
+    color:tomato;
+}
+.my-orders-rate-form textarea{
+    resize:vertical;
+    padding:8px;
+    border-radius:4px;
+    border:1px solid #c5c5c5;
+    font-family:inherit;
+    font-size:13px;
+}
+.my-orders-rate-actions{
+    display:flex;
+    gap:8px;
+}
+.my-orders-rate-actions button{
+    border:none;
+    padding:6px 16px;
+    border-radius:20px;
+    background-color:tomato;
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+.my-orders-rate-actions .my-orders-cancel{
+    background-color:transparent;
+    color:#49557e;
+    border:1px solid #c5c5c5;
+}
+.my-orders-span{
+    color:tomato;
+}
+
+@media (max-width:750px){
+    .my-orders-order{
+        grid-template-columns:1fr 3fr;
+        gap:10px;
+        font-size:13px;
+    }
+}

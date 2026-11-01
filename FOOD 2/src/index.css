@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family:Outfit;
+    scroll-behavior: smooth;
+}
+body{
+    min-height:100vh;
+}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+.app{
+    width:80%;
+    margin:auto;
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+/* ---- new: dark mode ----
+   Toggled by StoreContext (darkMode/toggleDarkMode), persisted in localStorage,
+   applied as data-theme on <body>. Only introduces new variables/overrides —
+   nothing about the light (default) theme changes. */
+:root{
+    --bg-color:#ffffff;
+    --text-color:#262626;
+    --card-bg:#ffffff;
+    --muted-text:#676767;
+    --border-color:#e2e2e2;
+}
+body[data-theme="dark"]{
+    --bg-color:#181818;
+    --text-color:#f1f1f1;
+    --card-bg:#242424;
+    --muted-text:#b5b5b5;
+    --border-color:#3a3a3a;
+    background-color:var(--bg-color);
+    color:var(--text-color);
+}
+/* Base text color everywhere in dark mode — prevents the classic
+   "black text on dark background" problem for any element we haven't
+   explicitly styled below. */
+body[data-theme="dark"] p,
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] label,
+body[data-theme="dark"] span,
+body[data-theme="dark"] li{
+    color:var(--text-color);
+}
+/* Card-like surfaces across every page get the dark card background */
+body[data-theme="dark"] .food-item,
+body[data-theme="dark"] .profile-card,
+body[data-theme="dark"] .my-orders-order-card,
+body[data-theme="dark"] .login-popup-container,
+body[data-theme="dark"] .admin-card,
+body[data-theme="dark"] .admin-table,
+body[data-theme="dark"] .cart-total,
+body[data-theme="dark"] .place-order-left input,
+body[data-theme="dark"] .contact-info-card,
+body[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .contact-faq-item,
+body[data-theme="dark"] .payment-method-option,
+body[data-theme="dark"] .payment-screen,
+body[data-theme="dark"] .order-success,
+body[data-theme="dark"] .favorites-item,
+body[data-theme="dark"] .cart-promocode-input{
+    background-color:var(--card-bg);
+    color:var(--text-color);
+    border-color:var(--border-color);
+}
+body[data-theme="dark"] .food-item-desc,
+body[data-theme="dark"] .navbar-username,
+body[data-theme="dark"] .profile-email,
+body[data-theme="dark"] .profile-pref-desc,
+body[data-theme="dark"] .cart-total-details,
+body[data-theme="dark"] .cart-promocode p,
+body[data-theme="dark"] .payment-method-desc,
+body[data-theme="dark"] .contact-hero p,
+body[data-theme="dark"] .contact-info-card p{
+    color:var(--muted-text);
+}
+body[data-theme="dark"] .navbar-search-box,
+body[data-theme="dark"] .profile-field input,
+body[data-theme="dark"] .payment-field input,
+body[data-theme="dark"] .admin-food-form input,
+body[data-theme="dark"] .contact-form input,
+body[data-theme="dark"] .contact-form textarea,
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select{
+    background-color:#2b2b2b;
+    color:var(--text-color);
+    border-color:var(--border-color);
+}
+body[data-theme="dark"] .navbar{
+    background-color:var(--bg-color);
+    border-bottom:1px solid var(--border-color);
+}
+body[data-theme="dark"] .navbar-menu.open,
+body[data-theme="dark"] .navbar-profile-dropdown{
+    background-color:var(--card-bg);
+}
+body[data-theme="dark"] .contact-hero{
+    background:linear-gradient(135deg, #2a2020, #241a1a);
+}
+body[data-theme="dark"] footer{
+    background-color:#0f0f0f;
+}
+
+/* ---- new: general visual polish ---- */
+button{
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+button:hover:not(:disabled){
+    transform:translateY(-1px);
+}
+button:active:not(:disabled){
+    transform:translateY(0px);
+}
+::selection{
+    background-color:#ffd8d0;
+}
+
+/* ---- new: toast notifications ---- */
+.app-toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    background-color:#262626;
+    color:white;
+    padding:12px 24px;
+    border-radius:30px;
+    font-size:14px;
+    z-index:999;
+    box-shadow:0px 4px 20px #00000030;
+    animation:toastIn 0.25s ease;
+}
+.app-toast.error{
+    background-color:tomato;
+}
+@keyframes toastIn{
+    0%{ opacity:0; transform:translate(-50%, 10px); }
+    100%{ opacity:1; transform:translate(-50%, 0px); }
+}

@@ -1,0 +1,141 @@
+.admin-dashboard{
+    margin:60px 0px;
+    min-height:60vh;
+}
+.admin-dashboard h2{
+    font-size:max(2vw,24px);
+    font-weight:600;
+    margin-bottom:20px;
+}
+.admin-error{
+    color:tomato;
+}
+.admin-note{
+    color:#9c9c9c;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+/* ---- tabs ---- */
+.admin-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+    border-bottom:1px solid #e2e2e2;
+    padding-bottom:12px;
+}
+.admin-tabs button{
+    border:1px solid #e2e2e2;
+    background:transparent;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+    color:#49557e;
+}
+.admin-tabs button.active{
+    background-color:tomato;
+    color:white;
+    border-color:tomato;
+}
+
+/* ---- overview cards ---- */
+.admin-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+.admin-card{
+    border:1px solid #e2e2e2;
+    border-radius:8px;
+    padding:20px;
+    box-shadow:0px 0px 10px #00000010;
+}
+.admin-card p{
+    color:#676767;
+    font-size:13px;
+    margin-bottom:8px;
+}
+.admin-card h3{
+    font-size:26px;
+    color:tomato;
+}
+
+/* ---- food management form ---- */
+.admin-food-form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+    align-items:center;
+}
+.admin-food-form input{
+    padding:9px 12px;
+    border:1px solid #c5c5c5;
+    border-radius:6px;
+    font-size:14px;
+    flex:1;
+    min-width:140px;
+}
+.admin-food-desc{
+    flex:2;
+    min-width:220px;
+}
+.admin-food-form button{
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    background-color:tomato;
+    color:white;
+    cursor:pointer;
+}
+.admin-food-form .admin-cancel{
+    background-color:transparent;
+    color:#49557e;
+    border:1px solid #c5c5c5;
+}
+
+/* ---- shared table ---- */
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+.admin-table th{
+    text-align:left;
+    color:#676767;
+    padding:10px;
+    border-bottom:2px solid #e2e2e2;
+}
+.admin-table td{
+    padding:10px;
+    border-bottom:1px solid #f0f0f0;
+    color:#454545;
+}
+.admin-table select{
+    padding:6px 10px;
+    border-radius:4px;
+    border:1px solid #c5c5c5;
+}
+.admin-link-btn{
+    border:none;
+    background:transparent;
+    color:tomato;
+    cursor:pointer;
+    font-size:13px;
+    margin-right:10px;
+    text-decoration:underline;
+}
+.admin-link-btn.admin-danger{
+    color:#c0392b;
+}
+
+@media (max-width:750px){
+    .admin-table{
+        font-size:12px;
+    }
+    .admin-food-form input{
+        min-width:100%;
+    }
+}
